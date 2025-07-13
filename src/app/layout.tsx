@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { DynamicTheme } from '@/components/DynamicTheme';
 
 export const metadata: Metadata = {
-  title: 'MuseBox',
+  title: 'Music',
   description: 'A modern local music player.',
   manifest: '/manifest.json',
 };
@@ -20,10 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="application-name" content="MuseBox" />
+        <meta name="application-name" content="Music" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="MuseBox" />
+        <meta name="apple-mobile-web-app-title" content="Music" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />

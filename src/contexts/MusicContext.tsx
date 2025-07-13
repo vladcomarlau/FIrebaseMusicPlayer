@@ -302,7 +302,7 @@ export const MusicProvider = ({ children }: { children: ReactNode }) => {
       if (currentSong) {
         navigator.mediaSession.metadata = new MediaMetadata({
           title: currentSong.name,
-          artist: "MuseBox",
+          artist: "Music",
           album: 'Music Player',
         });
         navigator.mediaSession.playbackState = isPlaying ? "playing" : "paused";
@@ -318,7 +318,7 @@ export const MusicProvider = ({ children }: { children: ReactNode }) => {
       if (isPlaying && currentSong) {
         document.title = currentSong.name;
       } else {
-        document.title = 'MuseBox';
+        document.title = 'Music';
       }
     }
   }, [currentSong, isPlaying]);

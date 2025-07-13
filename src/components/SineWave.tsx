@@ -56,10 +56,10 @@ export default function SineWave() {
   }, []);
 
   const { amp1, amp2, amp3, amp4 } = useSpring({
-    amp1: isPlaying && currentSong ? 15.36 : 0,
-    amp2: isPlaying && currentSong ? 12.8 : 0,
-    amp3: isPlaying && currentSong ? 20.48 : 0,
-    amp4: isPlaying && currentSong ? 17.92 : 0,
+    amp1: isPlaying && currentSong ? 25.696704 : 0,
+    amp2: isPlaying && currentSong ? 21.41442 : 0,
+    amp3: isPlaying && currentSong ? 34.262272 : 0,
+    amp4: isPlaying && currentSong ? 29.979488 : 0,
     config: { mass: 1, tension: 280, friction: 60 },
   });
 
@@ -67,7 +67,7 @@ export default function SineWave() {
     if (width <= 0) return { path1: '', path2: '' };
     
     const centerX = width / 2;
-    const containerHeight = 128; 
+    const containerHeight = 138; 
     const yOffset = containerHeight / 2;
 
     return (a1: number, a2: number, a3: number, a4: number) => {
@@ -103,19 +103,19 @@ export default function SineWave() {
   }, [width, currentPhase]);
 
 
-  if (!isClient || !width || !showSineWave) return null;
+  if (!isClient || !width) return null;
 
   return (
     <div
       className={cn(
-        "absolute bottom-0 left-0 w-full h-32 overflow-hidden transition-opacity duration-500 z-5",
-        currentSong ? 'opacity-100' : 'opacity-0'
+        "absolute bottom-0 left-0 w-full h-[138px] overflow-hidden transition-opacity duration-500 z-5",
+        currentSong && showSineWave ? 'opacity-100' : 'opacity-0'
       )}
     >
       <animated.svg
         width={width}
         height="100%"
-        viewBox={`0 0 ${width} 128`}
+        viewBox={`0 0 ${width} 138`}
         preserveAspectRatio="none"
       >
         <animated.path

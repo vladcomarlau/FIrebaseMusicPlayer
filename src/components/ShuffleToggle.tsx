@@ -18,7 +18,7 @@ export function ShuffleToggle({ isShuffled, onToggle }: ShuffleToggleProps) {
       onClick={onToggle}
       className={cn(
         "rounded-full h-10 w-10 flex-shrink-0",
-        isShuffled && "bg-foreground text-background hover:bg-foreground/90 hover:text-background"
+        isShuffled && "bg-foreground text-background"
       )}
       aria-label={`Shuffle is ${isShuffled ? "on" : "off"}`}
     >

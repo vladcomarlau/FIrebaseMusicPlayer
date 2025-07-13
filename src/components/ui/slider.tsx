@@ -11,7 +11,7 @@ const Slider = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> & { 
     thumbHidden?: boolean;
   }
->(({ className, thumbHidden, ...props }, ref) => (
+>(({ className, thumbHidden = false, ...props }, ref) => (
   <SliderPrimitive.Root
     ref={ref}
     className={cn(
@@ -22,21 +22,19 @@ const Slider = React.forwardRef<
   >
     <SliderPrimitive.Track 
       className={cn(
-        "relative h-2 w-full grow overflow-hidden rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-sm",
-        thumbHidden ? "bg-transparent border-none" : "border border-black/5 dark:border-white/20"
+        "relative h-2 w-full grow overflow-hidden rounded-full bg-transparent"
       )}
     >
       <SliderPrimitive.Range 
         className={cn(
-          "absolute h-full bg-black/5 dark:bg-white/10 backdrop-blur-sm",
-          thumbHidden ? "hidden" : "border border-black/5 dark:border-white/20"
+          "absolute h-full bg-transparent"
         )} 
       />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb 
       className={cn(
         "block h-5 w-5 rounded-full border border-black/5 dark:border-white/20 bg-black/5 dark:bg-white/10 backdrop-blur-sm ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-        thumbHidden ? "hidden" : "opacity-50 group-hover:opacity-100 group-focus-within:opacity-100"
+        thumbHidden ? "hidden" : ""
       )}
     />
   </SliderPrimitive.Root>

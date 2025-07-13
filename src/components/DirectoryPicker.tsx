@@ -102,7 +102,7 @@ export const DirectoryPicker = forwardRef<HTMLInputElement, DirectoryPickerProps
 
           <Card className="w-full max-w-md bg-transparent border-none shadow-none">
               <CardHeader className="text-center">
-                  <CardTitle className="text-3xl font-bold">Welcome!</CardTitle>
+                  <CardTitle className="text-3xl font-bold">Music</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col items-center gap-4">
                   <p className="text-muted-foreground">Select a folder to start playing music.</p>

@@ -13,8 +13,8 @@ import { useState } from "react";
 const NowPlayingIcon = () => (
     <div className="flex items-end w-5 h-5 gap-0.5">
         <span className="w-1 h-2 bg-primary/80 animate-[wave_1s_ease-in-out_-0.4s_infinite_alternate]"/>
-        <span className="w-1 h-4 bg-primary animate-[wave_1s_ease-in-out_-0.2s_infinite_alternate]"/>
-        <span className="w-1 h-3 bg-primary/80 animate-[wave_1s_ease-in-out_0s_infinite_alternate]"/>
+        <span className="w-1 h-4 bg-primary animate-[wave_1s_ease_in_out_-0.2s_infinite_alternate]"/>
+        <span className="w-1 h-3 bg-primary/80 animate-[wave_1s_ease_in_out_0s_infinite_alternate]"/>
     </div>
 );
 
@@ -49,8 +49,8 @@ export function SongList({ songs, isScrolling }: SongListProps) {
             className={cn(
               "flex items-center rounded-full group transition-all relative select-none overflow-hidden",
               isCurrent 
-                ? "bg-accent dark:bg-primary/20" 
-                : "bg-card even:bg-secondary hover:bg-accent"
+                ? "bg-accent" 
+                : "bg-card even:bg-secondary"
             )}
           >
             <div className="opacity-0">
@@ -64,7 +64,7 @@ export function SongList({ songs, isScrolling }: SongListProps) {
                 {isCurrent && isPlaying ? (
                   <NowPlayingIcon />
                 ) : (
-                  <span className={cn("font-bold text-lg text-muted-foreground group-hover:text-foreground", isCurrent && "text-primary/70 group-hover:text-primary")}>
+                  <span className={cn("font-bold text-lg text-muted-foreground", isCurrent && "text-primary/70")}>
                     {song.name.charAt(0).toUpperCase()}
                   </span>
                 )}
@@ -79,11 +79,10 @@ export function SongList({ songs, isScrolling }: SongListProps) {
               variant="ghost"
               size="icon"
               className={cn(
-                "rounded-full mr-2 flex-shrink-0 relative opacity-80 text-muted-foreground",
+                "rounded-full mr-2 flex-shrink-0 relative opacity-80",
                 isFavorited
                   ? "text-primary"
-                  : "text-muted-foreground",
-                isCurrent && "hover:text-foreground"
+                  : "text-muted-foreground"
               )}
               onClick={(e) => {
                 e.stopPropagation();

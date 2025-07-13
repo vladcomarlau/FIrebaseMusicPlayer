@@ -41,7 +41,7 @@ export function RepeatToggle({ repeat, onToggle }: RepeatToggleProps) {
       onClick={onToggle}
       className={cn(
         "rounded-full h-10 w-10 flex-shrink-0",
-        repeat !== "none" && "bg-foreground text-background hover:bg-foreground/90 hover:text-background"
+        repeat !== "none" && "bg-foreground text-background"
       )}
       aria-label={getAriaLabel()}
     >
