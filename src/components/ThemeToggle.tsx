@@ -17,8 +17,8 @@ export function ThemeToggle() {
       className="rounded-full h-10 w-10"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 dark:[filter:drop-shadow(0_0_1px_hsl(var(--primary)/0.8))]" />
+      <Sun className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Moon className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 dark:[filter:drop-shadow(0_0_1px_hsl(var(--primary)/0.8))]" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   )

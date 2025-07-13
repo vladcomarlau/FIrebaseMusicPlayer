@@ -77,7 +77,7 @@ export function Menu({ searchQuery, setSearchQuery }: MenuProps) {
         <div 
           className={cn(
             "absolute inset-0 flex items-center transition-all duration-300 ease-in-out z-10",
-            isSearchActive ? "w-full opacity-100" : "w-0 opacity-0"
+            isSearchActive ? "w-full opacity-100" : "w-0 opacity-0 pointer-events-none"
           )}
         >
           <div className="relative w-full flex items-center">
