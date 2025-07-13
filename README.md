@@ -1,1 +1,1 @@
-# Web app music player that uses local files
+# Music player web app that uses local files
