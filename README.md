@@ -1,5 +1,6 @@
-# Firebase Studio
+# Firebase Music Player Web Progressive App
 
-This is a NextJS starter in Firebase Studio.
+This is a music app generated using Google Firebase Studio.
 
-To get started, take a look at src/app/page.tsx.
+Demo
+https://www.youtube.com/shorts/w8n79nFL1vg
