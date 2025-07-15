@@ -26,17 +26,29 @@ export const MusicProvider = ({ children }: { children: ReactNode }) => {
 
   const sortedSongs = useMemo(() => {
     return [...songs].sort((a, b) => {
-      if (sort === "name-asc") {
-        return a.name.localeCompare(b.name);
-      } else {
-        return b.name.localeCompare(a.name);
+      switch (sort) {
+        case "name-asc":
+          return a.name.localeCompare(b.name);
+        case "name-desc":
+          return b.name.localeCompare(a.name);
+        case "date-desc":
+          return b.dateAdded - a.dateAdded;
+        case "date-asc":
+          return a.dateAdded - b.dateAdded;
+        default:
+          return a.name.localeCompare(b.name);
       }
     });
   }, [songs, sort]);
 
   const toggleSort = useCallback(() => {
     setSort(prev => {
-      const newSort = prev === 'name-asc' ? 'name-desc' : 'name-asc';
+      let newSort: SortOption;
+      if (prev === 'name-asc') newSort = 'name-desc';
+      else if (prev === 'name-desc') newSort = 'date-desc';
+      else if (prev === 'date-desc') newSort = 'date-asc';
+      else newSort = 'name-asc';
+      
       try {
         localStorage.setItem('musebox-sort', newSort);
       } catch (error) {
@@ -179,6 +191,7 @@ export const MusicProvider = ({ children }: { children: ReactNode }) => {
         file,
         name: file.name.replace(/\.[^/.]+$/, ""),
         url: songUrl,
+        dateAdded: file.lastModified,
       };
     });
     setSongs(newSongs);

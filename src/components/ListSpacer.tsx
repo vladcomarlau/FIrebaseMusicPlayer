@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 
 interface ListSpacerProps {
@@ -10,7 +9,7 @@ export function ListSpacer({ isMenuOpen = false }: ListSpacerProps) {
     <div
       className={cn(
         "w-full flex-shrink-0 transition-all duration-300",
-        isMenuOpen ? "h-80" : "h-48"
+        "h-56"
       )}
       aria-hidden="true"
     />

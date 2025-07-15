@@ -4,9 +4,10 @@ export interface Song {
   file: File;
   name: string;
   url: string;
+  dateAdded: number;
 }
 
-export type SortOption = "name-asc" | "name-desc";
+export type SortOption = "name-asc" | "name-desc" | "date-asc" | "date-desc";
 
 export type RepeatOption = "none" | "list" | "song";
 

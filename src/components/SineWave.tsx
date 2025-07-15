@@ -67,7 +67,7 @@ export default function SineWave() {
     if (width <= 0) return { path1: '', path2: '' };
     
     const centerX = width / 2;
-    const containerHeight = 138; 
+    const containerHeight = 170; 
     const yOffset = containerHeight / 2;
 
     return (a1: number, a2: number, a3: number, a4: number) => {
@@ -108,14 +108,14 @@ export default function SineWave() {
   return (
     <div
       className={cn(
-        "absolute bottom-0 left-0 w-full h-[138px] overflow-hidden transition-opacity duration-500 z-5",
-        currentSong && showSineWave ? 'opacity-100' : 'opacity-0'
+        "absolute bottom-0 left-0 w-full h-[170px] overflow-hidden transition-opacity duration-500 z-5",
+        showSineWave ? "opacity-100" : "opacity-0"
       )}
     >
       <animated.svg
         width={width}
         height="100%"
-        viewBox={`0 0 ${width} 138`}
+        viewBox={`0 0 ${width} 170`}
         preserveAspectRatio="none"
       >
         <animated.path
